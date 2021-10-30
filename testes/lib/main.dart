@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:testes/pages/bloc/home_bloc.dart';
+import 'package:testes/pages/bloc/home_state.dart';
 import 'package:testes/pages/home_page.dart';
 
 void main() {
@@ -15,7 +18,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: BlocProvider<HomeBloc>(
+        create: (BuildContext context) => HomeBloc(HomeLoadingState()),
+        child: const HomePage(),
+      ),
     );
   }
 }
