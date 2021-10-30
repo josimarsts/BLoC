@@ -5,8 +5,18 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Exemplo BLoC'),
+      ),
+      body: ListView.builder(
+        itemCount: 50,
+          itemBuilder: (context, index){
+            return ListTile(
+              title: Text('Item $index'),
+            );
+          }
+      ),
     );
   }
 }
