@@ -29,7 +29,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     var list = await Future.delayed(
       const Duration(seconds: 3),
       () => <String>[
-        'Item 1',
+        'Teste 1',
+        'Teste 2',
+        'Teste 3',
+        'Teste 4',
+        'Teste 5',
+        'Teste 6',
+        'Teste 7',
+        'Teste 8',
+        'Teste 9',
+        'Teste 10',
       ],
     );
     return HomeLoadedState(list: list);
