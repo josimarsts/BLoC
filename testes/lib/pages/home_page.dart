@@ -18,13 +18,19 @@ class HomePage extends StatelessWidget {
         builder: (context, state) {
           //Retorna lista
           if(state is HomeLoadedState) {
-            return ListView.builder(
-              itemCount: 50,
-              itemBuilder: (context, index){
-                return ListTile(
-                  title: Text('Item $index'),
-                );
-              }
+            return SingleChildScrollView(
+                child: SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: ListView.builder(
+                        itemCount: state.list.length,
+                        itemBuilder: (context, index){
+                          return ListTile(
+                            title: Text(state.list[index]),
+                          );
+                        }
+                    ),
+                )
             );
           }
           //Retorna caso erro ao carregar lista
